@@ -1,7 +1,5 @@
 # -*- coding: UTF-8 -*-
 """Modify each function until the tests pass."""
-from __future__ import division
-from __future__ import print_function
 
 
 def add_5(a_number):
@@ -15,7 +13,7 @@ def add_5(a_number):
         return a_number plus five
     except expressed in python, not english
     """
-return (a_number) + 5
+    return (a_number) + 5
 
 
 def adder(a_number, another_number):
@@ -23,7 +21,7 @@ def adder(a_number, another_number):
 
     Same as above, but with any two numbers.
     """
-return + a_number, another_number
+    return + a_number + another_number
 
 
 def shout(a_string):
@@ -45,6 +43,16 @@ def really_shout(a_string):
     Look up how to 'concatinate' strings to make this happen.
     """
     return shout(a_string) + '!'
+
+def shout_with_a_number(a_string, a_number):
+    """Return a string in uppercase with a space and a_number concatentated.
+    E.g.
+    >>> shout_with_a_number('hello', 42)
+    'HELLO 42'
+
+    HINT: Lookup how to cast a_number to a string or lookup how to use f-strings in python
+    """
+    return shout_with_a_number('hello', 42)
 
 
 def minitest(f, args, expected):
@@ -73,6 +81,7 @@ if __name__ == "__main__":
     minitest(really_shout, ["hello"], "HELLO!")
     minitest(really_shout, [""], "!")
     minitest(really_shout, ["!"], "!!")
+    minitest(shout_with_a_number, ('hello', 42), "HELLO 42")
     print("""
           This section does a quick test on your results and prints them nicely
           It's NOT the official tests, they are in tests.py as usual.
