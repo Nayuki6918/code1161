@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+In this week, i learned about the practical application of python, and got the result games of python. That is a great way to using the text game to improved existing Non-conformant Code in homework. In addition, i have some questions about 'retract' in python. When the debug shows'IndentationError: unindent does not match any outer indentation level', i check my code repeatedly and fix it. However i can not find the right format of this line. So is there anything tool could help me fix this line?
