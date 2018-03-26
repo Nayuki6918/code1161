@@ -15,15 +15,15 @@ some_words = ['what', 'does', 'this', 'line', 'do', '?']
 
 for word in some_words:
     print(word)
-# I think it will print 'what'
+
 for x in some_words:
     print(x)
-# I think it will print 'does'
+
 print(some_words)
-# I think it will print 'this'
+
 if len(some_words) > 3:
     print('some_words contains more than 3 words')
-# I think it will print 'line do ?'
+
 def usefulFunction():
     """
     You may want to look up what uname does before you guess
@@ -31,5 +31,5 @@ def usefulFunction():
     https://docs.python.org/3/library/platform.html#platform.uname
     """
     print(platform.uname())
-
+    
 usefulFunction()

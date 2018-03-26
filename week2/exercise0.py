@@ -13,7 +13,7 @@ def add_5(a_number):
         return a_number plus five
     except expressed in python, not english
     """
-    return (a_number) + 5
+    return a_number + 5
 
 
 def adder(a_number, another_number):
@@ -42,7 +42,8 @@ def really_shout(a_string):
     from above.
     Look up how to 'concatinate' strings to make this happen.
     """
-    return shout(a_string) + '!'
+    return str.upper(a_string) + '!'
+
 
 def shout_with_a_number(a_string, a_number):
     """Return a string in uppercase with a space and a_number concatentated.
@@ -52,7 +53,7 @@ def shout_with_a_number(a_string, a_number):
 
     HINT: Lookup how to cast a_number to a string or lookup how to use f-strings in python
     """
-    return shout_with_a_number('hello', 42)
+    return shout(a_string) + ' ' + str(a_number)
 
 
 def minitest(f, args, expected):
@@ -60,7 +61,7 @@ def minitest(f, args, expected):
 
     This is a helper. Don't edit it.
     """
-    result = f(*args)
+    result = f(args)
     template = "expect {name}({args}) == {expected} => {result}"
     print(template.format(name=f.__name__,
                           args=str(args)[1:-1],

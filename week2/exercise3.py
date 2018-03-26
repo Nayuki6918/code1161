@@ -7,7 +7,10 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return a_number % 2 == 1
+    if a_number % 2 == 0:
+        return False
+    else:
+        return True 
 
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
@@ -40,10 +43,10 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    returnlist = []
-    for x in range (1,11):
-        returnlist.append("*")
-    return (returnlist)
+    empty_list = []
+    for i in range(10):
+        empty_list.append('*')
+    return empty_list
 
 
 
@@ -55,10 +58,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     a string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    returnlist = []
-    for x in range (1,6):
-        returnlist.append("*")
-    return(returnlist)
+    empty_list = []
+    for i in range (number_of_items):
+       empty_list.append(symbol)
+    return empty_list
 
 
 def loops_2():
@@ -79,10 +82,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    returnlist = []
-    for x in range (0,10):
-         returnlist.append("*")
-    return(returnlist)       
+    empty_list = []
+    for i in range (10):
+        another_list = []
+    for j in range(10):
+        another_list.append('*')
+    empty_list.append(another_list)
+    return empty_list
        
    
 
@@ -108,13 +114,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    returnlist = []
-    for i in range(0,10):
-        tmp = []
-        for j in range(0,10):
-            tmp.append(i)
-        returnlist.append(tmp)
-    return returnlist
+    outer_list = []
+    for i in range(10):
+        inner_list = []
+        for j in range(10):
+            inner_list.append(str(i))
+        outer_list.append(inner_list)
+    return outer_list
 
 
 def loops_4():
@@ -135,9 +141,9 @@ def loops_4():
     ]
     """
     returnlist = []
-    for i in range(0,10):
+    for i in range(0, 10):
         tmp = []
-        for j in range(0,10):
+        for j in range(0, 10):
             tmp.append(j)
         returnlist.append(tmp)
     return returnlist
@@ -196,13 +202,13 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    returnlist = []
-    for i in range(0, 10):
-        tmp = []
-        for j in range(0, i):
-            tmp.append(j)
-        returnlist.append(tmp)
-    return returnlist
+    out_list = []
+    for i in range(10):
+        inner_list = []
+        for j in range(i+1):
+            inner_list.append(str(j))
+        out_list.append(inner_list)
+    return out_list
 
 
 def loops_7():
@@ -226,18 +232,17 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    returnlist = []
-    for i in range(0, 5):
-        tmp = []
-        for j in range(0, 10):
-            tmp.append("*")
-            if i + j < 5:
-                tmp[j] = " "
-            asterisk = i + 5
-            if i + j > asterisk:
-                tmp[j] = " "
-        returnlist.append(tmp)
-    return returnlist
+    out_list = []
+
+    for x in range(5):
+        inner_list = []
+        for i in range(9):
+            if abs(i - 4) <= x:
+                inner_list.append('*')
+            else:
+                inner_list.append(' ')
+        out_list.append(inner_list)
+    return out_list   
 
 
 def lp(some_kind_of_list, exercise_name):
