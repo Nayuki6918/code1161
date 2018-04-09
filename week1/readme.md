@@ -1,3 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
-
-In this tutorial, we learn about 2 different sortware, and started to install a text editor and use it to learn python. For the python, i have some questions about how to fix wrong text. In sometimes, the debug machine can find the wrong text and i need writed these text again(the same text),the debug machine shows that's right....In addtion, how many words should we writed on the'readme'? The debug console shows 'lab book entry completed',is it means the number of 'read me' words less than standard values?
+In this tutorial, we learn about 2 different sortware, and started to install a text editor and use it to learn python. For the python, i have some questions about how to fix wrong text. In sometimes, the debug machine can find the wrong text and i need writed these text again(the same text),the debug machine shows that's right.

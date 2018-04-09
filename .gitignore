@@ -19,11 +19,3 @@ temp_completion_log
 maps/nswlocalitypolygonshp\.zip
 
 venv/
-.vscode/
-admin/marksTreeMap.js
-week2/tests.py
-week2/exercise3.py
-week2/exercise0.py
-week1/tests.py
-week1/exercise1.py
-*.py

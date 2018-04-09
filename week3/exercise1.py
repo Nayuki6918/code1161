@@ -72,16 +72,7 @@ def stubborn_asker(low, high):
     Ask for a number, and if the response is outside the bounds keep asking
     until you get a number that you think is OK
     """
-    message = "Give me a number between {low} and {high}:".format(low=low,high=high)
-    while True:
-        guessed_number = int(input(message)) 
-         
-        if low < guessed_number < high: 
-            print("{} is a correct number".format(guessed_number))
-            return guessed_number
-        else: 
-            print ("{} not in range, try again".format(guessed_number))
- 
+    pass
 
 
 def not_number_rejector(message):
@@ -91,14 +82,7 @@ def not_number_rejector(message):
     "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    while True: 
-        try:
-            guessed_Number = int(input("Enter a number:"))
-            a_number = int(guessed_Number) 
-            return a_number
-        except ValueError: 
-            print("Sorry, that is not an integer, please try again")
-    return None
+    pass
 
 
 def super_asker(low, high):
@@ -107,34 +91,24 @@ def super_asker(low, high):
     Combine stubborn_asker and not_number_rejector to make a function
     that does it all!
     """
-    message = "Give me a number between {low}, and {high}:".format(low=low,high=high)
-    while True:
-        try:
-            input_number = int(input(message))
-            if low < input_number < high:
-                print("{} looks good.".format(input_number))
-                return input_number
-        except Exception as e:
-            print("try again ({})".format(e))
-             
-        else:
-            print("{input} isn't between {low}, {high}".format(low=low,high=high)
+    pass
 
 
-    if __name__ == "__main__":
-        # this section does a quick test on your results and prints them nicely.
-        # It's NOT the official tests, they are in tests.py as usual.
-        # Add to these tests, give them arguments etc. to make sure that your
-        # code is robust to the situations that you'll see in action.
-        # NOTE: because some of these take user input you can't run them from
-        
+if __name__ == "__main__":
+    # this section does a quick test on your results and prints them nicely.
+    # It's NOT the official tests, they are in tests.py as usual.
+    # Add to these tests, give them arguments etc. to make sure that your
+    # code is robust to the situations that you'll see in action.
+    # NOTE: because some of these take user input you can't run them from
+    # inside Atom, you need to run them from the terminal. E.g.:
+    # ben@um:~/projects/git/code1161base$ python week3/exercise1.py
 
-        print("\nloop_ranger", loop_ranger(1, 10, 2))
-        print("\nlone_ranger", lone_ranger(1, 10, 3))
-        print("\ntwo_step_ranger", two_step_ranger(1, 10))
-        print("\ngene_krupa_range", gene_krupa_range(1, 20, 2, 5))
-        print("\nstubborn_asker")
-        stubborn_asker(30, 45)
-        print("\nnot_number_rejector")
-        print("\nsuper_asker")
-        super_asker(33, 42)
+    print("\nloop_ranger", loop_ranger(1, 10, 2))
+    print("\nlone_ranger", lone_ranger(1, 10, 3))
+    print("\ntwo_step_ranger", two_step_ranger(1, 10))
+    print("\ngene_krupa_range", gene_krupa_range(1, 20, 2, 5))
+    print("\nstubborn_asker")
+    stubborn_asker(30, 45)
+    print("\nnot_number_rejector")
+    print("\nsuper_asker")
+    super_asker(33, 42)
