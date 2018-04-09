@@ -1,5 +1,7 @@
 # -*- coding: UTF-8 -*-
 """Modify each function until the tests pass."""
+from __future__ import division
+from __future__ import print_function
 
 
 def is_odd(a_number):
@@ -7,30 +9,21 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return a_number % 2 == 1
+    pass
+
 
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
 
-    Using the engineering flowchart (in week2 folder engineeringFlowchart.png)
-    for the rules, return the apropriate response to the input parameters.
+    Using the engineering flowchart for the rules, return the apropriate
+    response to the input parameters.
     Use conditional statements: if, else, elif etc.
     This function should return either:
     "WD-40"
     "Duct Tape"
     "No Problem"
     """
-
-    if moves is True:
-        if should_move is True:
-            return "No problem"
-        else: 
-            return "Duct Tape"
-    else:
-        if should_move is True:
-            return "WD-40"
-        else:
-            return "No problem"
+    pass
 
 
 def loops_1a():
@@ -40,11 +33,18 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    returnlist = []
-    for x in range (1,11):
-        returnlist.append("*")
-    return (returnlist)
+    pass
 
+
+def star_map():
+    """Use a map to make stars and bangs.
+
+    Using a map, return a list of 10 items, each one a string with exacly
+    one star in it if the index is odd and exactly one exclamation mark
+    if it's even. Reuse the is odd function that you've already written.
+    E.g.: ["!", "*", "!", "*", "!", "*", "!", "*", "!", "*"]
+    """
+    pass
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -55,10 +55,7 @@ def loops_1c(number_of_items=5, symbol="#"):
     a string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    returnlist = []
-    for x in range (1,6):
-        returnlist.append("*")
-    return(returnlist)
+    pass
 
 
 def loops_2():
@@ -79,12 +76,7 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    returnlist = []
-    for x in range (0,10):
-         returnlist.append("*")
-    return(returnlist)       
-       
-   
+    pass
 
 
 def loops_3():
@@ -108,13 +100,7 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    returnlist = []
-    for i in range(0,10):
-        tmp = []
-        for j in range(0,10):
-            tmp.append(i)
-        returnlist.append(tmp)
-    return returnlist
+    pass
 
 
 def loops_4():
@@ -129,19 +115,10 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    returnlist = []
-    for i in range(0,10):
-        tmp = []
-        for j in range(0,10):
-            tmp.append(j)
-        returnlist.append(tmp)
-    return returnlist
-
+    pass
 
 
 def loops_5():
@@ -166,14 +143,7 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    returnlist = []
-    for i in range(0, 10):
-        tmp = []
-        for j in range(0, 5):
-            tmp.append("(i" + str(i) + ", j" + str(j) + "),")
-        returnlist.append(tmp)
-    return returnlist
-
+    pass
 
 
 def loops_6():
@@ -196,13 +166,7 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    returnlist = []
-    for i in range(0, 10):
-        tmp = []
-        for j in range(0, i):
-            tmp.append(j)
-        returnlist.append(tmp)
-    return returnlist
+    pass
 
 
 def loops_7():
@@ -226,18 +190,7 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    returnlist = []
-    for i in range(0, 5):
-        tmp = []
-        for j in range(0, 10):
-            tmp.append("*")
-            if i + j < 5:
-                tmp[j] = " "
-            asterisk = i + 5
-            if i + j > asterisk:
-                tmp[j] = " "
-        returnlist.append(tmp)
-    return returnlist
+    pass
 
 
 def lp(some_kind_of_list, exercise_name):
@@ -274,6 +227,7 @@ if __name__ == "__main__":
     print(fix_it(False, True), "fix_it")
     print(fix_it(False, False), "fix_it")
     lp(loops_1a(), "loops_1a")
+    lp(star_map(), "star_map")
     lp(loops_1c(4, "×°×"), "loops_1c")
     lp(loops_2(), "loops_2")
     lp(loops_3(), "loops_3")
