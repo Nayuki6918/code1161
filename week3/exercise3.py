@@ -29,19 +29,21 @@ def advancedGuessingGame():
     purpose if you can!
     """
   
-  guessed = False
-  count = 1   
-  while not guessed:
-    guessedNumber = int(input("guess a number: "))
-    print("you guessed {},".format(guessedNumber),)
-    if guessedNumber == actualNumber:
-      print("you got it!! It was {}".format(actualNumber))
-      guessed = True
-    elif guessedNumber < actualNumber:
-      print("too small, try again ")
-    else:
-      print("too big, try again   ")
-  return "You got it!"
+guessed = False
+count = 1   
+while not guessed:
+  actual_number=random.randint(10,int( ))
+  guessedNumber = int(input("guess a number: "))
+  print("you guessed {},".format(guessedNumber),)
+  if guessedNumber == actual_number:
+    print("you got it!! It was {}".format(actual_number))
+    guessed = True
+  elif guessedNumber < actual_number:
+    print("too small, try again")
+  else:
+    print("too big, try again")
+
+ 
   
 
 if __name__ == "__main__":
