@@ -61,7 +61,11 @@ def do_bunch_of_bad_things():
 # return a lit of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    pass
+    countdown_message = []
+    if start > stop:
+        countdown = start
+    if countdown = stop:
+        
 
 
 # TRIANGLES
