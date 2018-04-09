@@ -28,7 +28,9 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
-
+  
+  guessed = False
+  count = 1   
   while not guessed:
     guessedNumber = int(input("guess a number: "))
     print("you guessed {},".format(guessedNumber),)
