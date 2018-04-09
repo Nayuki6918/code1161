@@ -71,10 +71,15 @@ def theTests(path_to_code_to_check="."):
     testResults = []
 
     # Tests from here:
+<<<<<<< HEAD
     path = "{}/week{}/exercise0.py".format(path_to_code_to_check, WEEK_NUMBER)
     testResults.append(
         test(test_flake8(path),
              "Exercise 0: pass the linter"))
+=======
+    path = "exercise0.py"
+
+>>>>>>> upstream/master
 
     if ex_runs(path_to_code_to_check, exNumber=0, weekNumber=WEEK_NUMBER):
         exercise0 = imp.load_source("exercise0", path)
@@ -128,6 +133,7 @@ def theTests(path_to_code_to_check="."):
             test(exercise0.really_shout("PARTY") == "PARTY!",
                  "Exercise 0: really_shout - PARTY => PARTY!?"))
 
+<<<<<<< HEAD
     path = "{}/week{}/exercise1.py".format(path_to_code_to_check, WEEK_NUMBER)
     testResults.append(
         test(test_flake8(path),
@@ -137,15 +143,27 @@ def theTests(path_to_code_to_check="."):
     testResults.append(
         test(test_flake8(path),
              "Exercise 2: pass the linter"))
+=======
+    path = "exercise1.py".format(path_to_code_to_check, WEEK_NUMBER)
+
+
+    path = "exercise2.py".format(path_to_code_to_check, WEEK_NUMBER)
+
+>>>>>>> upstream/master
 
     testResults.append(
         test(ex2runs(path_to_code_to_check),
              "Exercise 2: debug the file"))
 
+<<<<<<< HEAD
     path = "{}/week{}/exercise3.py".format(path_to_code_to_check, WEEK_NUMBER)
     testResults.append(
         test(test_flake8(path),
              "Exercise 3: pass the linter"))
+=======
+    path = "exercise3.py".format(path_to_code_to_check, WEEK_NUMBER)
+
+>>>>>>> upstream/master
 
     if ex3runs(path_to_code_to_check):
         exercise3 = imp.load_source("exercise3", path)
