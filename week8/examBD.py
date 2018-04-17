@@ -17,8 +17,9 @@ def greet(name="Towering Timmy"):
     return a string of "Hello" and the name argument.
     E.g. if given as "Towering Timmy" it should return "Hello Towering Timmy"
     """
-    return "Hello " + str(name)
-    pass
+    name = 'Towering Timmy'
+    return "Hello " + name
+    
 
 
 def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
@@ -32,7 +33,7 @@ def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
         if item == 3:
             counter += 1
     return counter
-    pass
+   
 
 
 def fizz_buzz():
@@ -73,7 +74,7 @@ def put_behind_bars(input_string="very naughty boy"):
     broken = list(input_string)
     barred = [x+"|" for x in broken]
     return "|" + "".join(barred)
-    pass
+  
 
 
 def pet_filter(letter="a"):
@@ -91,7 +92,7 @@ def pet_filter(letter="a"):
         if letter in p:
             in_list.append(p)
     return in_list
-    pass
+   
 
 
 def best_letter_for_pets():
@@ -110,7 +111,7 @@ def best_letter_for_pets():
             best_number = count
             best_letter = letter
     return best_letter
-    pass
+   
 
 
 def make_filler_text_dictionary():

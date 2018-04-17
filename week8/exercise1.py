@@ -5,10 +5,9 @@ I'm in UR exam.
 This is the same as the weekly exercises, fill in the functions,
 and test them to see if they work.
 
-You've got an hour.
+You've have 90 minutes.
 """
-from __future__ import division
-from __future__ import print_function
+import string
 import time
 
 
@@ -18,7 +17,8 @@ def greet(name="Towering Timmy"):
     return a string of "Hello" and the name argument.
     E.g. if given as "Towering Timmy" it should return "Hello Towering Timmy"
     """
-    pass
+    name = 'Towering Timmy'
+    return 'Hello ' + name
 
 
 def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
@@ -27,7 +27,15 @@ def three_counter(input_list=[1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]):
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 5
     """
-    pass
+    l = [1, 4, 3, 5, 7, 1, 3, 2, 3, 3, 5, 3, 7]
+    count_times = []
+    i = 3
+    for i in l :
+        count_times.append(l.count(i))
+
+    print (l[l.index(max(count_times))])
+        
+    
 
 
 def fizz_buzz():
@@ -42,25 +50,33 @@ def fizz_buzz():
             from https://blog.codinghorror.com/why-cant-programmers-program/
 
     Return a list that has an integer if the number isn't special, and a string
-    if it is. E.g. [1, 2, "Fizz", 4, "Buzz", 6, 7, ...]
+    if it is. E.g. [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, ...]
     """
-    fizzBuzzList = []
-    # your code here
-    return fizzBuzzList
-
+   
+    start_time = time.time()
+    for x in range(101):
+        print ("fizz"[x%3*4::]+"buzz"[x%5*4::]or x)
+    return "Fizzbuzz"
 
 def put_behind_bars(input_string="very naughty boy"):
     """Interleave the input_string with pipes.
 
     Given any string, interleave it with pipes (| this character)
-    e.g. "very naughty boy" should return "|v|e|r|y| |n|a|u|g|h|t|y| |b|o|y|"
+    e.g. "very naughty boy" should return the string
+    "|v|e|r|y| |n|a|u|g|h|t|y| |b|o|y|"
+    TIP: conside using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
-    pass
+    input_string="very naughty boy"
+    broken = list(input_string)
+    barred = [i+"|" for i in broken]
+   
+    return "|" + "".join(barred)
 
 
 def pet_filter(letter="a"):
-    """Return a list of animals with `letter` in their name."""
+    """Return a list of pets whose nameinput_string="very naughty boy"""
+    
     pets = ["dog", "goat", "pig", "sheep", "cattle", "zebu", "cat", "chicken",
             "guinea pig", "donkey", "duck", "water buffalo",
             "western honey bee", "dromedary camel", "horse", "silkmoth",
@@ -69,8 +85,12 @@ def pet_filter(letter="a"):
             "bali cattle", "gayal", "turkey", "goldfish", "rabbit", "koi",
             "canary", "society finch", "fancy mouse", "siamese fighting fish",
             "fancy rat and lab rat", "mink", "red fox", "hedgehog", "guppy"]
-    pass
-
+    input_list = []
+    letter = 'a'
+    for p in pets:
+        if letter in p:
+            input_list.append(p)
+    return input_list
 
 def best_letter_for_pets():
     """Return the letter that is present at least once in the most pet names.
@@ -79,26 +99,49 @@ def best_letter_for_pets():
     TIP: return just a letter, not the list of animals.
     """
     import string
-    the_alphabet = string.lowercase
-    pass
+    the_alphabet = string.ascii_lowercase
+    bestnumber = 0
+    bestletter = " "
+    for letter in the_alphabet:
+        count = len(pet_filter(letter))
+        return (count +(count > bestnumber) or letter)
 
 
 def make_filler_text_dictionary():
     """Make a dictionary of random words filler text.
 
-    There is a random word generator here: http://www.setgetgo.com/randomword/
-    The only argument that the generator takes is the length of the word.
-
+    There is a random word generator here:
+    "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=3&maxLength=10&limit=1"
+    Currently, minLength=3 and maxLength=10 in this url. 
+    This means we will get a word between 3 and 10 characters.
+    If we set minLength=7 and maxLength=7, we will get something like this:
+    >>> url = "http://api.wordnik.com/v4/words.json/randomWords?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&minLength=7&maxLength=7&limit=1"
+    >>> r = requests.get(url)
+    >>> r.json() # will get you a python list containing something like this:
+    >>> # [{"id":5651391,"word":"salmony"}]
+    
     Return a dictionary where the keys are numbers, and the values are lists of
-    words. e.g. {3: ['cat','pop','cow'], ...}
+    words. e.g.
+    { 
+        3: ['Sep', 'the', 'yob'],
+        4: ['aaaa', 'bbbb', 'cccc'],
+        ...
+        7: ['aaaaaaa', 'bbbbbbb', 'ccccccc']
+    }
     Use the API to get the 3 words.
+    
     The dictionary should have the numbers between 3 and 7 inclusive.
     (i.e. 3, 4, 5, 6, 7 and 3 words for each)
-    TIP: to add an argument to a URL, use: ?argName=argVal e.g. ?len=
     TIP: you'll need the requests library
     """
+    
     import requests
-    pass
+    word_dictionary = {}
+    for i in range(3,8):
+    	l = requests.get("http://www.setgetgo.com/randomword/?len=" + str(i))
+    	word_dictionary[i] = l
+
+    return word_dictionary
 
 
 def random_filler_text(number_of_words=200):
@@ -109,18 +152,24 @@ def random_filler_text(number_of_words=200):
     length, and a random one of the 3 words.
     Make the paragraph have number_of_words words in it.
     Return it as a string
-    TIP: you'll need the random library
-    Bonus: extra mark if you get the paragraph to start with a
-           capital letter and end with a full stop.
+    TIP: you'll need the random library, 
+        see line 77 of week4/hangman_leadboard.py for an example.
     """
     import random
-    pass
+    word_dictionary = make_filler_text_dictionary()
+    paragraph_list = []
+    for x in range(number_of_words):
+        length = int(random.random()*4)+3
+        idx = int(random.random()*2)
+        paragraph_list += word_dictionary[length][idx]
+    return paragraph_list
 
 
 def fast_filler(number_of_words=200):
-    """Reimplement random filler text.
+    """Reimplement random_filler_text.
 
-    This time, the first time the code runs, save the dictionary to a file.
+    This time, the first time the code runs, save the dictionary returned
+    from make_filler_text_dictionary to a file.
     On the second run,if the file already exists use it instead of going to
     the internet.
     Use the filename "dict_racey.words"
@@ -129,9 +178,13 @@ def fast_filler(number_of_words=200):
     into and out of the file. Be careful when you read it back in, it'll
     convert integer keys to strings.
     """
-    pass
+    import os
+    import random
+    import json
 
 
+
+   
 if __name__ == '__main__':
     print(greet())
     print(three_counter())
