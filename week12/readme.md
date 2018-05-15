@@ -1,1 +1,3 @@
-TODO: Reflect on what you learned this week and what is still unclear.
+In this week, we learned about the using of pandans to collected different data, and shaping statistical charts to shows the interesting things in this issue.
+In addition, with the helping of our tutors, i find that the total map of different game places, is a great way to explain the important of location.
+However, i have the issue about the final project, When i explain the code process in this dataset, should i explain the reason which why i used these code?
